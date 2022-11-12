@@ -1,0 +1,10 @@
+{% extends 'categories/master.html' %}
+{% block contents%}
+<h2>Category Name : {{category.catName}}</h2>
+{% comment %} <h4>Category Description : {{category.catDesc}}</h4> {% endcomment %}
+<ul>
+    {% for p in category.post_set.all%}
+    <li>{{p.title}}</li>
+    {% endfor %}
+</ul>
+{% endblock%}

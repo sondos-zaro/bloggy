@@ -1,0 +1,19 @@
+{% extends 'posts/master.html' %}
+{% block contents %}
+  <table>
+    <theader>
+        <tr>
+            <th> title</th>
+            <th> content</th>
+            <th>category</th>
+        </tr>  
+    </theader> 
+    {% for post in posts %}
+    <tr>
+        <td><a href="{% url 'post' post.id %}">{{post.title}}</td>
+        <td>{{post.content}}</td>
+        <td>{{post.category.catName}}</td>
+    </tr>
+     {% endfor %}
+  </table>
+{% endblock %}
